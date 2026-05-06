@@ -11,7 +11,7 @@ $date = date("d/m/Y H:i:s");
 <title>DigitaLucX</title>
 
 <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo time(); ?>">
-<link rel="icon" type="image/png" href="assets/img/logo3.png">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
 
 </head>
 
