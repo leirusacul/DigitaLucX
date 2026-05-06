@@ -265,7 +265,7 @@ h1{
     align-items:center;
     justify-content:center;
 
-    padding:28px;
+    padding:20px;
 
     background:
         linear-gradient(
@@ -276,9 +276,9 @@ h1{
 
     border:1px solid rgba(255,255,255,0.10);
 
-    border-radius:28px;
+    border-radius:20px;
 
-    margin-bottom:35px;
+    margin-bottom:30px;
 
     box-shadow:
         0 0 35px rgba(44,147,100,0.16),
