@@ -82,8 +82,8 @@ $date = date("d/m/Y");
                     <span class="status">ONLINE</span><br><br>
 
                     <span class="command">$ last update</span><br>
-                    <?php echo $date ?> 
-                    <div class="status"><span id="clock"><?php date('h:i:s A'); ?></span></div><br><br>
+                    <span><?php echo $date; ?></span>
+                    <span class="status" id="clock"><?php echo date('H:i:s'); ?></span><br><br>
 
                     <span class="command">$ DLX Systems</span><br>
                     System initialized<span class="cursor">_</span>
@@ -111,23 +111,16 @@ function updateClock() {
     const now = new Date().getTime();
     const serverNow = new Date(now + clockOffset);
 
-    let horas = serverNow.getHours();
+    const horas = serverNow.getHours().toString().padStart(2, '0');
     const minutos = serverNow.getMinutes().toString().padStart(2, '0');
     const segundos = serverNow.getSeconds().toString().padStart(2, '0');
 
-    const ampm = horas < 12 ? 'AM' : 'PM';
-    horas = horas % 12 || 12;
-
-    document.getElementById("clock").innerHTML = `${horas}:${minutos}:${segundos} ${ampm}`;
+    document.getElementById("clock").innerHTML = `${horas}:${minutos}:${segundos}`;
 
     clockTimerID = setTimeout(updateClock, 1000);
 }
 
-function stopClock() {
-    if (clockTimerID) {
-        clearTimeout(clockTimerID);
-    }
-}
+initClock(<?php echo time() * 1000; ?>);
 </script>
 
 </body>
