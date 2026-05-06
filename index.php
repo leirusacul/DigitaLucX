@@ -82,7 +82,7 @@ $date = date("d/m/Y");
                     <span class="status">ONLINE</span><br><br>
 
                     <span class="command">$ last update</span><br>
-                    <?php echo $date; ?> 
+                    <?php echo $date ?> 
                     <div class="status"><span id="clock"><?php date('h:i:s A'); ?></span></div><br><br>
 
                     <span class="command">$ DLX Systems</span><br>
