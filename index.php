@@ -83,7 +83,7 @@ $date = date("d/m/Y");
 
                     <span class="command">$ last update</span><br>
                     <span><?php echo $date; ?></span>
-                    <span class="status" id="clock"><?php echo date('H:i:s'); ?></span><br><br>
+                    <span id="clock"><?php echo date('H:i:s'); ?></span><br><br>
 
                     <span class="command">$ DLX Systems</span><br>
                     System initialized<span class="cursor">_</span>
