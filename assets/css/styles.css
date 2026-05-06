@@ -262,17 +262,16 @@ h1{
 .logo-box{
 
     display:inline-flex;
+    alig.logo-box{
+
+    display:inline-flex;
+
     align-items:center;
     justify-content:center;
 
     padding:28px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.08),
-            rgba(255,255,255,0.03)
-        );
+    background:#DDDDD4;
 
     border:1px solid rgba(255,255,255,0.10);
 
