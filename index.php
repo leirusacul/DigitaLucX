@@ -5,296 +5,344 @@ $date = date("d/m/Y H:i:s");
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigitalucX</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>DigitaLucX</title>
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+<style>
 
-        body{
-            background:#050816;
-            color:white;
-            min-height:100vh;
-            overflow:hidden;
-            position:relative;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-        /* Fondo tecnológico */
+body{
+    background:#000000;
+    color:#FFFFFF;
+    min-height:100vh;
+    overflow:hidden;
+    position:relative;
+}
 
-        .grid{
-            position:absolute;
-            width:100%;
-            height:100%;
-            background:
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size:40px 40px;
-            z-index:0;
-        }
+/* GRID */
 
-        .glow{
-            position:absolute;
-            width:600px;
-            height:600px;
-            background:radial-gradient(circle, rgba(138,43,226,0.25), transparent 70%);
-            top:-150px;
-            right:-100px;
-            filter:blur(50px);
-            z-index:0;
-        }
+.grid{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
 
-        .glow2{
-            position:absolute;
-            width:500px;
-            height:500px;
-            background:radial-gradient(circle, rgba(0,170,255,0.18), transparent 70%);
-            bottom:-180px;
-            left:-100px;
-            filter:blur(50px);
-            z-index:0;
-        }
+    background-size:40px 40px;
+    z-index:0;
+}
 
-        .container{
-            position:relative;
-            z-index:2;
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            padding:30px;
-        }
+/* GLOW */
 
-        .card{
-            width:100%;
-            max-width:1100px;
-            background:rgba(10,15,35,0.78);
-            border:1px solid rgba(255,255,255,0.08);
-            backdrop-filter:blur(12px);
-            border-radius:30px;
-            padding:60px;
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:60px;
-            box-shadow:0 0 60px rgba(0,0,0,0.45);
-        }
+.glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle, rgba(44,147,100,0.25), transparent 70%);
+    top:-150px;
+    right:-100px;
+    filter:blur(60px);
+}
 
-        .left{
-            flex:1;
-        }
+.glow2{
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:radial-gradient(circle, rgba(44,147,100,0.18), transparent 70%);
+    bottom:-150px;
+    left:-100px;
+    filter:blur(60px);
+}
 
-        .logo{
-            width:180px;
-            margin-bottom:25px;
-        }
+/* MAIN */
 
-        h1{
-            font-size:64px;
-            line-height:1.1;
-            margin-bottom:20px;
-        }
+.container{
+    position:relative;
+    z-index:2;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
 
-        .gradient{
-            background:linear-gradient(90deg,#8A2BE2,#00bfff);
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;
-        }
+.card{
+    width:100%;
+    max-width:1200px;
 
-        .description{
-            font-size:20px;
-            color:#cbd5e1;
-            line-height:1.7;
-            margin-bottom:35px;
-            max-width:650px;
-        }
+    background:rgba(10,10,10,0.82);
 
-        .buttons{
-            display:flex;
-            gap:20px;
-            flex-wrap:wrap;
-        }
+    border:1px solid rgba(255,255,255,0.06);
 
-        .btn{
-            padding:15px 28px;
-            border-radius:14px;
-            text-decoration:none;
-            font-weight:bold;
-            transition:0.3s;
-        }
+    backdrop-filter:blur(10px);
 
-        .btn-primary{
-            background:linear-gradient(90deg,#8A2BE2,#6d28d9);
-            color:white;
-            box-shadow:0 0 20px rgba(138,43,226,0.4);
-        }
+    border-radius:30px;
 
-        .btn-primary:hover{
-            transform:translateY(-3px);
-        }
+    padding:60px;
 
-        .btn-secondary{
-            border:1px solid rgba(255,255,255,0.15);
-            color:white;
-            background:rgba(255,255,255,0.04);
-        }
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-        .btn-secondary:hover{
-            background:rgba(255,255,255,0.08);
-        }
+    gap:60px;
 
-        .right{
-            flex:1;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-        }
+    box-shadow:
+        0 0 40px rgba(0,0,0,0.6),
+        0 0 80px rgba(44,147,100,0.08);
+}
 
-        .terminal{
-            width:100%;
-            max-width:480px;
-            background:#020617;
-            border-radius:20px;
-            overflow:hidden;
-            border:1px solid rgba(255,255,255,0.08);
-            box-shadow:0 0 35px rgba(0,0,0,0.5);
-        }
+/* LEFT */
 
-        .terminal-top{
-            background:#0f172a;
-            padding:14px 18px;
-            display:flex;
-            align-items:center;
-            gap:10px;
-        }
+.left{
+    flex:1;
+}
 
-        .dot{
-            width:12px;
-            height:12px;
-            border-radius:50%;
-        }
+.logo{
+    width:180px;
+    margin-bottom:30px;
+}
 
-        .red{ background:#ff5f56; }
-        .yellow{ background:#ffbd2e; }
-        .green{ background:#27c93f; }
+h1{
+    font-size:68px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
 
-        .terminal-body{
-            padding:30px;
-            font-family:monospace;
-            color:#00ff95;
-            line-height:2;
-            font-size:15px;
-        }
+.green{
+    color:#2C9364;
+}
 
-        .command{
-            color:#38bdf8;
-        }
+.description{
+    color:#DDDDD4;
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:40px;
+    max-width:650px;
+}
 
-        .status{
-            color:#22c55e;
-        }
+.buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
 
-        .footer{
-            margin-top:35px;
-            color:#64748b;
-            font-size:14px;
-        }
+.btn{
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:14px;
+    font-weight:bold;
+    transition:0.3s;
+}
 
-        @media(max-width:950px){
+.btn-primary{
+    background:#2C9364;
+    color:#FFFFFF;
+    box-shadow:0 0 20px rgba(44,147,100,0.35);
+}
 
-            .card{
-                flex-direction:column;
-                text-align:center;
-            }
+.btn-primary:hover{
+    transform:translateY(-3px);
+    background:#36ad76;
+}
 
-            .buttons{
-                justify-content:center;
-            }
+.btn-secondary{
+    border:1px solid rgba(255,255,255,0.12);
+    color:#FFFFFF;
+    background:rgba(255,255,255,0.03);
+}
 
-            h1{
-                font-size:48px;
-            }
+.btn-secondary:hover{
+    background:rgba(255,255,255,0.06);
+}
 
-        }
+/* RIGHT */
 
-    </style>
+.right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+/* TERMINAL */
+
+.terminal{
+    width:100%;
+    max-width:480px;
+    background:#050505;
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.06);
+
+    box-shadow:
+        0 0 35px rgba(0,0,0,0.7),
+        0 0 50px rgba(44,147,100,0.08);
+}
+
+.terminal-top{
+    background:#111111;
+    padding:14px 18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+}
+
+.red{
+    background:#ff5f56;
+}
+
+.yellow{
+    background:#ffbd2e;
+}
+
+.green-dot{
+    background:#27c93f;
+}
+
+.terminal-body{
+    padding:35px;
+    font-family:monospace;
+    font-size:16px;
+    line-height:2.2;
+    color:#DDDDD4;
+}
+
+.command{
+    color:#2C9364;
+}
+
+.status{
+    color:#2C9364;
+    font-weight:bold;
+}
+
+/* TYPING CURSOR */
+
+.cursor{
+    display:inline-block;
+    width:10px;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    0%{opacity:1;}
+    50%{opacity:0;}
+    100%{opacity:1;}
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:35px;
+    color:#777777;
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+    .card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    h1{
+        font-size:48px;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="grid"></div>
-    <div class="glow"></div>
-    <div class="glow2"></div>
+<div class="grid"></div>
+<div class="glow"></div>
+<div class="glow2"></div>
 
-    <div class="container">
+<div class="container">
 
-        <div class="card">
+    <div class="card">
 
-            <div class="left">
+        <!-- LEFT -->
 
-                <!-- LOGO -->
-                <img src="assets/img/logo.png" class="logo" alt="DigitalucX Logo">
+        <div class="left">
 
-                <h1>
-                    Tecnología,<br>
-                    <span class="gradient">Desarrollo & Sistemas</span>
-                </h1>
+            <!-- LOGO -->
+            <img src="assets/img/logo.png" class="logo" alt="DigitaLucX">
 
-                <div class="description">
-                    Desarrollo web moderno, automatizaciones,
-                    sistemas personalizados y soluciones digitales
-                    enfocadas en rendimiento, diseño y escalabilidad.
-                </div>
+            <h1>
+                Digita<span class="green">LucX</span>
+            </h1>
 
-                <div class="buttons">
-                    <a href="#" class="btn btn-primary">
-                        Ver Proyectos
-                    </a>
+            <div class="description">
+                Soluciones digitales, desarrollo web,
+                automatización de procesos y sistemas modernos
+                enfocados en tecnología, rendimiento y escalabilidad.
+            </div>
 
-                    <a href="#" class="btn btn-secondary">
-                        Contacto
-                    </a>
-                </div>
+            <div class="buttons">
 
-                <div class="footer">
-                    © <?php echo date("Y"); ?> DigitalucX — GitHub Deploy Active
-                </div>
+                <a href="#" class="btn btn-primary">
+                    Ver proyectos
+                </a>
+
+                <a href="#" class="btn btn-secondary">
+                    Contacto
+                </a>
 
             </div>
 
-            <div class="right">
+            <div class="footer">
+                © <?php echo date("Y"); ?> DigitaLucX
+            </div>
 
-                <div class="terminal">
+        </div>
 
-                    <div class="terminal-top">
-                        <div class="dot red"></div>
-                        <div class="dot yellow"></div>
-                        <div class="dot green"></div>
-                    </div>
+        <!-- RIGHT -->
 
-                    <div class="terminal-body">
+        <div class="right">
 
-<span class="command">$ git push origin main</span><br>
-<span class="status">✓ Deploy successful</span><br><br>
+            <div class="terminal">
 
-<span class="command">$ php -v</span><br>
-PHP <?php echo phpversion(); ?><br><br>
+                <div class="terminal-top">
 
-<span class="command">$ server status</span><br>
-<span class="status">ONLINE</span><br><br>
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green-dot"></div>
 
-<span class="command">$ last update</span><br>
-<?php echo $date; ?><br><br>
+                </div>
 
-<span class="command">$ DigitalucX</span><br>
-System initialized...
+                <div class="terminal-body">
 
-                    </div>
+                    <span class="command">$ server status</span><br>
+                    <span class="status">ONLINE</span><br><br>
+
+                    <span class="command">$ last update</span><br>
+                    <?php echo $date; ?><br><br>
+
+                    <span class="command">$ DLX Systems</span><br>
+                    System initialized<span class="cursor">_</span>
 
                 </div>
 
@@ -303,6 +351,8 @@ System initialized...
         </div>
 
     </div>
+
+</div>
 
 </body>
 </html>
