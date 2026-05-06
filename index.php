@@ -289,7 +289,7 @@ h1{
         <div class="left">
 
             <!-- LOGO -->
-            <img src="assets/img/logo.png" class="logo" alt="DigitaLucX">
+            <img src="public/assets/img/logo.png" class="logo" alt="DigitaLucX">
 
             <h1>
                 Digita<span class="green">LucX</span>
